@@ -1,0 +1,279 @@
+* {box-sizing: border-box} /* padding and border are included in the width and height of all */
+  
+body { /* this is the styling for all body sections of each page */
+    font-family: Arial, Helvetica, sans-serif; /* default font is set to arial (this is different for header/banner text and instagram text in the footer */
+    margin: 0;
+    padding: 0;
+    background-color:#E5EDEB; /* background colour set to a shade of grey using hex colour code */
+}
+
+nav {
+  overflow: hidden;
+  background-color: #A1CEC3; /* colour for inactive pages' buttons (light blue in hex colour code) */
+  
+}
+
+nav li {
+  list-style-type: none; /*removes the dots from the list styling of the nav bar options */
+}
+
+nav a { /* styling for the nav bar options */
+  float: left;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 87px;
+  text-decoration: none;
+}
+
+.dropdown { /* styling for the dropdown list of options under the 'menu' option on the nav bar */
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {  /* styling for the dropdown list of options under the 'menu' option on the nav bar and the button itself*/
+  font-size: 20px;  
+  border: none;
+  color: white;
+  padding: 14px 90px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+nav a:hover, .dropdown:hover .dropbtn {  /* hover styling for the dropdown list of options under the 'menu' option on the nav bar */
+  background-color: #535857; /* when hovered on, background colour changes to a dark-ish shade of grey */
+    font-weight: bold; /* when hovered on, text turns bold */
+}
+
+.dropdown-content { /* styling for the list of options in dropdown list */
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a { /* styling for the list of options in dropdown list */
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover { /* hover styling for the list of options in dropdown list */
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content { /* hover styling for the list of options in dropdown list, list appears when dropdown is hovered on */
+  display: block;
+}
+
+.dropdown:focus-within .dropdown-content { /* styling for the list of options in dropdown list, list appears when a keyboard user focuses on the menu option in the nav bar */
+  display: block;
+}
+
+nav .icon { /* does not display the 'hamburger' icon on a desktop view */
+  display: none;
+}
+
+.mobile-nav-links { /* does not display the mobile links (kai menu and inu menu options) on a desktop view's nav bar (only within the dropdown) */
+  display:none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media only screen and (max-width: 640px) {
+  .navbar a:not(:first-child) {display: none;} /*only displays the home option */
+  .navbar button {display:none;} /* doesn't display the menu button from the nav bar */
+  .navbar a.icon {
+    float: right; 
+    display: block; /* displays 'hamburger' button for mobile nav bar version */
+  }
+
+  .mobile-nav-links {
+    display:block; /* displays the mobile nav bar links (kai menu and inu menu) instead of the menu dropdown method */
+  }
+  
+  .google_form_reservation {
+  width:265px;
+  
+  }
+  
+  .navbar.responsive {position: relative;}
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  } /* end of responsive styling */
+  
+  @media only screen and (max-width: 1107px) { /* this version (tablet) has the styling so that kai and inu menu show up as well as the menu button in the nav bar 
+                                                  before the user clicks the 'hamburger' icon to see all of the options */
+    .navbar li:not(:first-child) {display: none;}
+    .navbar button {display:none;}
+    .navbar a.icon {
+      float: right;
+      display: block;
+      
+      
+    }
+    .mobile-nav-links {
+      display:block;
+    }
+    
+    .slideshowContainer {
+    padding-left: 50px;
+    }
+    
+    .google_form_reservation {
+    width:265px;
+    
+    }
+    
+    .navbar.responsive {position: relative;}
+    .navbar.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .navbar.responsive li {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    } /* end of responsive styling */
+
+
+nav ul {
+margin-top:0 } /* gets rid of space between nav bar and header/banner */
+
+.active { /* styling for active page's button in the navigation bar */
+  background-color: #535857; /* backround colour is made dark-ish grey */
+  font-weight: bold; /* font changed to bold */
+  color: white;
+}
+
+.slides { /* styling for the slide images */
+    padding: 10px; /* all around padding surrounding the images */
+    margin-right:12px;
+    float:left;
+    width:90%;
+
+}
+
+.slideshowButton1 { /* styling for the first/LEFT button that operates the slideshow */
+  margin-top:15px;
+  margin-left:210px;
+  transform: translate(-50%, -50%); /* more positioning of button */
+  font-size: 16px; /* text size set to 16px */
+  padding: 8px 12px; /* padding out the button/forming the shape of the button */
+  cursor: pointer; /* changes icon of the cursor to a pointer */
+  border-radius: 5px; /* rounded corners */
+  text-align: center; /* aligns arrow in the middle of the button */
+  color: white; /* arrow colour is white */
+  border: 1px solid #1E88E5; /* border thickness 1px and is solid and is a blue colour */
+  background-color: #A1CEC3; /* background colour of button is same light blue as non-hovered/active nav bar buttons */
+}
+
+.slideshowButton2 { /* styling for the second/RIGHT button that operates the slideshow */
+  
+  margin-left:10px;
+  transform: translate(-50%, -50%); /* more positioning of button */
+  font-size: 16px; /* text size set to 16px */
+  padding: 8px 12px; /* padding out the button/forming the shape of the button */
+  cursor: pointer; /* changes icon of the cursor to a pointer */
+  border-radius: 5px; /* rounded corners */
+  text-align: center; /* aligns arrow in the middle of the button */
+  color: white; /* arrow colour is white */
+  border: 1px solid #1E88E5; /* border thickness 1px and is solid and is a blue colour */
+  background-color: #A1CEC3; /* background colour of button is same light blue as non-hovered/active nav bar buttons */
+}
+
+.slideshowButton1:hover { /* styling for the first/left slideshow button when hovered on */
+    background-color: #fff; /* background-colour changes to white when hovered on */
+    border: 1px solid #1E88E5; /* border thickness 1px and is solid and is a blue colour */
+    color: #A1CEC3; /* arrow colour in button is same light blue as non-hovered/active nav bar buttons */
+}
+
+.slideshowButton2:hover { /* styling for the second/right slideshow button when hovered on */
+    background-color: #fff; /* background-colour changes to white when hovered on */
+    border: 1px solid #1E88E5; /* border thickness 1px and is solid and is a blue colour */
+    color: #A1CEC3; /* arrow colour in button is same light blue as non-hovered/active nav bar buttons */
+}
+
+.home_page_blurb { /* styling for the blurb/first section of text on the home page */
+    font-size: 18px; /* text size set to 18px */
+    padding:10px;
+}
+
+h2 {
+padding-left:20px;
+}
+
+h1 {
+padding-left: 30px;
+}
+
+.menu-headers {
+
+padding-left:230px;
+}
+
+.column { /* styling used for the columns that create the two halves of the home page */
+  float: left; /* allows items to sit next to each other in line */
+  width: 50%; /* 50 percent of the width each column (2 columns) which means that they are equal in width */
+  padding: 10px; /* padding between the columns/around them */
+}
+
+.column_Menu_Listing { /* styling used for the columns that create the two halves of the home page */
+  float: left; /* allows items to sit next to each other in line */
+  width: 50%; /* 50 percent of the width each column (2 columns) which means that they are equal in width */
+  padding: 5px; /* padding between the columns/around them */
+  font-size:22px;
+}
+
+.row:after { /* styling for clearing floats after the columns */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer_content { /* styling for the content in the footer's container and text. this is used on all pages */
+    float: left; /* float to the left so instagram info and contact info can be displayed next to each other */
+    width:50%; /* even split of columns */
+    padding: 12px; /* padding around columns/between them */
+    font-size:18px; /* text size set to 18px */
+    background-color:#535857; /* background colour is a dark grey colour, set by hex colour code */
+    height:75px; /* height of footer */
+    color:white; /* colour of text inside footer */
+    bottom:0%;
+}
+.footer_column { /* styling for the columns inside the left column that splits all of the footer in half. 
+                    this holds the instagram icon and the instagram related text */
+    float: left; /* float to the left so instagram info and related text can be displayed next to each other */
+    width:33%; /* this keeps the instagram icon in the corner and the related text centred */
+    margin-right: 10px; /* spacing between the icon and text and from the border on the icon side */
+    font-size:18px; /* text size set to 18px */
+    font-family: 'Oxygen', sans-serif; /* font type for instagram related text set to Oxygen from google api fonts link */
+    bottom:0%;
+}
+
+
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .row, .home_page_blurb, .footer_content, .column {
+    width: 100%;
+  }
+
+}

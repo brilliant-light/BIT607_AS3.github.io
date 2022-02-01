@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Haukai Kai Menu</title> <!-- This is the name of the tab for this code -->
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- hamburger menu-->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+        <meta charset="utf-8">
+    </head>
+    <!-- CODE ASSUMPTIONS/notes:
+1) it's been assumed that the images that would actually be used for the menus would probably be taken of the dishes cooked by Haukai staff.
+Because of this, there are different types of pictures included in the listings.
+Not all of the pictures are the described dishes, either. Most of the pictures displayed are similar to placeholders
+since they're not the ones that would probably actually be used.
+2) the descriptions and pricings for the listings are from the Haukai Restaurant Menu appendix document 
+3)the html code validator gives errors for the dropdown section of my navigation/nav bar,
+this could be changed to not have a dropdown at all and have 6 equal links across the nav bar, to remove these 'errors'.
+but I have left the dropdown section in, because despite what the code validator says, I got the code for the dropdown part of the nav
+bar from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp (w3 schools, how to create a dropdown nav bar.)-->
+ 
+    <!-- start of main content of page -->
+    <body> 
+		
+        <h1>Haukai Restaurant Kai Menu</h1> <!-- heading for the page-->
+        <nav aria-label="Main Navigation" class="navbar" id="myTopnav">
+            <ul>
+            <li><a href='index.html'>Home</a></li> <!-- home button link for nav bar-->
+            <li><a href='reservations.html'>Reservations</a></li> <!-- reservations button link for nav bar-->
+            <div class="dropdown"> <!-- class for the dropdown menu button and symbol for 'menu' on the nav bar-->
+                <button class="dropbtn">Menu
+                  <i class="fa fa-caret-down"></i> <!-- the arrow that points down to indicate a dropdown list of options-->
+                </button>
+                <div class="dropdown-content"> <!-- the class for the dropdown options -->
+                  <li><a href='food.html'>Kai (food) Menu</a></li> <!-- kai menu option on dropdown -->
+                  <li><a href='drink.html'>Inu (drink) Menu</a></li> <!-- inu menu option on dropdown-->
+                </div>
+              </div> 
+            <li><a href='contact.html'>Contact</a></li> <!-- contact button link for nav bar-->
+            <li><a href='staff.html'>Staff Roster</a></li> <!-- staff roster button link for nav bar-->
+            </ul>
+  
+            <!-- this is a class of two links that only get displayed on a smaller screen size (eg mobile)-->
+            <a class='mobile-nav-links' href='food.html'> Kai Menu</a> <!-- kai menu option for mobile nav bar-->
+            <a class='mobile-nav-links' href='drink.html'>Inu Menu</a> <!-- inu menu option for mobile nav bar-->
+            <!-- this was done because it was easier to do than to format the dropdown list for a mobile version of the nav bar-->
+  
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- this javascript code runs when the three lines are clicked on in the mobile version of the nav bar-->
+                <i class="fa fa-bars"></i> <!-- three lines for mobile nav bar-->
+              </a>
+        </nav>
+
+        <!-- start of javascript for displaying the mobile version of the nav bar-->
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <!-- end of javascript for displaying the mobile version of the nav bar-->
+
+
+        <div role="main" aria-label="first menu listing, rewena bread" class="row"> <!-- This is the row for the rewena bread listing -->
+
+            <h2 aria-label="appetizers heading" class="menu-headers">APPETIZERS</h2> <!-- appetizer heading/splitter-->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/rewenaBread_FINAL.jpg" alt="a picture of rewena bread">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>REWENA BREAD 10</h3> <!-- item name and price-->
+
+                <p>Traditional Māori Bread</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="second menu listing, paua fritters" class="row"> <!-- This is the row for the paua fritters listing-->
+ 
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/pauaFritters_FINAL.jpg" alt="a picture of paua fritters">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>PAUA FRITTERS 16</h3> <!-- item name and price-->
+
+                <p>Finely diced pieces of paua, served with a side of salad and horopito dressing.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="third menu listing, raw fish" class="row"> <!-- This is the row for the raw fish listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/rawFish_FINAL.jpg" alt="a picture of raw fish">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>RAW FISH 20</h3> <!-- item name and price-->
+
+                <p>Dried snapper fish marinated in coconut cream, served with tomatoes and spring onions.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="fourth menu listing, poached salmon" class="row"> <!-- This is the row for the poached salmon listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/poachedSalmon_FINAL.jpg" alt="a picture of poached salmon">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>POACHED SALMON 22</h3> <!-- item name and price-->
+
+                <p>Salmon poached in an orange and pistachio glaze, served with rewena bread.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="fifth menu listing, seafood basket" class="row"> <!-- This is the row for the seafood basket listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/seafoodBasket_FINAL.jpg" alt="a picture of seafood basket">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>SEAFOOD BASKET 25</h3> <!-- item name and price-->
+
+                <p>Crumbed mussels, salt and pepper squid, crumbed hoki bites and garlic prawns.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="sixth menu listing, fish of the day" class="row"> <!-- This is the row for the fish of the day listing -->
+
+            <h2 aria-label="mains heading" class="menu-headers">MAIN</h2>
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/fishOfTheDay_FINAL.jpg" alt="a picture example of the fish of the day">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>FISH OF THE DAY 25</h3> <!-- item name and price-->
+
+                <p>Beer battered fish and kumara fries, served wih a side of salad and homemade tartare.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="seventh menu listing, mussels and scallops" class="row"> <!-- This is the row for the mussels and scallops listing -->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/musselsAndScallops_FINAL.jpg" alt="a picture of mussels and scallops">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>MUSSELS AND SCALLOPS 25</h3> <!-- item name and price-->
+
+                <p>Steamed mussel & scallop mousse, honey and soy broth.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="eighth menu listing, seafood chowder" class="row"> <!-- This is the row for the seafood chowder listing -->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/seafoodChowder2ORG_FINAL.jpg" alt="a picture of seafood chowder">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>SEAFOOD CHOWDER 30</h3> <!-- item name and price-->
+
+                <p>Creamy chowder filled with terakihi, prawn, hoki, scallops and mussels, served with flatbread.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="ninth menu listing, pork belly" class="row"> <!-- This is the row for the pork belly listing -->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/porkBelly_FINAL.jpg" alt="a picture of pork belly">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>PORK BELLY 30</h3> <!-- item name and price-->
+
+                <p>Slow cooked pork belly served on a bed of apple slaw with roasted kumara, and crispy noodle.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="tenth menu listing, lamb steak" class="row"> <!-- This is the row for the lamb steak listing -->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/lambSteak_FINAL.jpg" alt="a picture of lamb steak">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>LAMB STEAK 33</h3> <!-- item name and price-->
+
+                <p>New Zealand Lamb coated in a kawakawa crumb, served with Dijon mustard glazed carrots, roasted butternut squash and a mushroom Jus.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="eleventh menu listing, venison" class="row"> <!-- This is the row for the venison listing -->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/venison_FINAL.jpg" alt="a picture of venison">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>VENISON 33</h3> <!-- item name and price-->
+
+                <p>Venison crusted with horopito, served with glazed plums, cabbage salad and red wine Jus.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="twelfth menu listing, kapiti icecream" class="row"> <!-- This is the row for the kapati icecream listing -->
+
+            <h2 aria-label="dessserts heading" class="menu-headers">DESSERT</h2>
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/kapitiIceCream_FINAL.jpg" alt="a picture of kāpati icecream">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>KĀPATI ICE CREAM 10</h3> <!-- item name and price-->
+
+                <p>Check for daily specials.</p> <!--item description-->
+
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="thirteenth menu listing, steam pudding" class="row"> <!-- This is the row for the steam pudding listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/steamPudding_FINAL.jpg" alt="a picture of steam pudding">
+            </div> <!--  end of left half/column code -->
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>STEAM PUDDING 12</h3> <!-- item name and price-->
+
+                <p>Golden syrup flavoured steam pudding, served with vanilla icecream.</p> <!--item description-->
+            </div>
+        </div>
+
+
+        <div role="main" aria-label="fourteenth menu listing, mini pavlova" class="row"> <!-- This is the row for the mini pavlova listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/miniPavlova_FINAL.jpg" alt="mini pavlova">
+            </div> <!--  end of left half/column code -->
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>MINI PAVLOVA 16</h3> <!-- item name and price-->
+
+                <p>Mini Pavlova served with kawakawa and lemon infused cream and fresh fruit.</p> <!--item description-->
+            </div>
+        </div>
+
+        <div role="main" aria-label="fifteenth menu listing, banoffee pie" class="row"> <!-- This is the row for the banoffee pie listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/banoffeePie_FINAL.jpg" alt="banoffee pie">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>BANOFFEE PIE 16</h3> <!-- item name and price-->
+
+                <p>Toffee, fresh bananas and fresh cream.</p> <!--item description-->
+            </div>
+        </div>
+
+        
+
+
+<footer> <!-- start of the footer code/bottom of the page code -->
+
+    <div class="row"> <!-- container for the columns inside the footer -->
+
+        <div class="footer_content"> <!-- container for the left side of the footer that contains the instagram icon and relevant text -->
+
+            <div class="footer_column"> <!-- instagram icon column within the left side container-->
+                <a href="https://www.instagram.com/queenscliffe_luxury/" target="_blank"> <img src="./images_finalTINY/instagramIcon.jpg" alt="Instagram icon">  </a>
+            <!-- the above is the link for the instagram page that opens up in a new tab (blank target) and the file path for the image-->
+            <!--the instagram icon link doesn't take the user to a Haukai instagram, instead an instagram I made for a previous assignment.--> 
+        </div> <!-- end of instagram icon column within the left side container-->
+
+            <div class="footer_column"> <!-- instagram text column within the left side container -->
+            <p>Follow us on Instagram!</p> <!--text-->
+            </div> <!-- end of instagram text column within the left side container -->
+            
+            <!-- having the columns inside a column allows the text to be displayed next to the icon rather than underneath-->
+            
+        </div> <!-- end of left side container of the footer-->
+
+        <div class="footer_content"> <!-- right side container of the footer -->
+	
+            <p>Support Indigenous businesses</p>
+            
+        </div> <!--end of right side container of the footer -->
+
+    </div> <!-- end of overall container 'row' that contains all columns in the footer-->
+
+</footer> <!-- end of footer code -->
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <title>Haukai Inu Menu</title> <!-- This is the name of the tab for this code -->
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+        <meta charset="utf-8">
+    </head>
+ <!-- CODE ASSUMPTIONS/notes:
+1) it's been assumed that the images that would actually be used for the menus would probably be taken of the drinks made by Haukai staff.
+Because of this, there are different types of pictures included in the listings.
+3/4 pictures aren't exactly what's described in the listing, either. Most of the pictures displayed are similar to placeholders
+since they're not the ones that would probably actually be used. But they do show the main groups of drinks; wine, beer/cider and non-alcoholic.
+2) the descriptions and pricings for the listings are from the Haukai Restaurant Menu appendix document 
+3) the html code validator gives errors for the dropdown section of my navigation/nav bar,
+this could be changed to not have a dropdown at all and have 6 equal links across the nav bar, to remove these 'errors'.
+but I have left the dropdown section in, because despite what the code validator says, I got the code for the dropdown part of the nav
+bar from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp (w3 schools, how to create a dropdown nav bar.)-->
+
+    <!-- start of main content of page -->
+    <body> 
+		
+        <h1>Haukai Restaurant Inu Menu</h1>
+
+		<nav aria-label="Main Navigation" class="navbar" id="myTopnav">
+            <ul>
+            <li><a href='index.html'>Home</a></li> <!-- home button link for nav bar-->
+            <li><a href='reservations.html'>Reservations</a></li> <!-- reservations button link for nav bar-->
+            <div class="dropdown"> <!-- class for the dropdown menu button and symbol for 'menu' on the nav bar-->
+                <button class="dropbtn">Menu
+                  <i class="fa fa-caret-down"></i> <!-- the arrow that points down to indicate a dropdown list of options-->
+                </button>
+                <div class="dropdown-content"> <!-- the class for the dropdown options -->
+                  <li><a href='food.html'>Kai (food) Menu</a></li> <!-- kai menu option on dropdown -->
+                  <li><a href='drink.html'>Inu (drink) Menu</a></li> <!-- inu menu option on dropdown-->
+                </div>
+              </div> 
+            <li><a href='contact.html'>Contact</a></li> <!-- contact button link for nav bar-->
+            <li><a href='staff.html'>Staff Roster</a></li> <!-- staff roster button link for nav bar-->
+            </ul>
+  
+            <!-- this is a class of two links that only get displayed on a smaller screen size (eg mobile)-->
+            <a class='mobile-nav-links' href='food.html'> Kai Menu</a> <!-- kai menu option for mobile nav bar-->
+            <a class='mobile-nav-links' href='drink.html'>Inu Menu</a> <!-- inu menu option for mobile nav bar-->
+            <!-- this was done because it was easier to do than to format the dropdown list for a mobile version of the nav bar-->
+  
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- this javascript code runs when the three lines are clicked on in the mobile version of the nav bar-->
+                <i class="fa fa-bars"></i> <!-- three lines for mobile nav bar-->
+              </a>
+        </nav>
+
+        <!-- start of javascript for displaying the mobile version of the nav bar-->
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <!-- end of javascript for displaying the mobile version of the nav bar-->
+
+        <div role="main" aria-label="red wine listings" class="row"> <!-- This is the row for the red wine listings -->
+
+            <h2 aria-label="beverages heading">BEVERAGES</h2>
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/wine-portrait1_FINAL.jpg" alt="portrait photo of wine">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+            
+                
+                <p>Terrace Edge Pinot Noir, 2012, Wairarapa (Bottle, $53)/(Glass, $13) </p>
+                   <p> Altitude Pinot Noir, 2010, Marlborough (Bottle, $64)/(Glass, $15) </p>
+                   <p>Greystone Pinot Noir, 2012, Wairarapa (Bottle, $73)/(Glass, $17)</p>
+                   <p>Terrace Edge, Syrah, 2012 Wairarapa (Bottle, $53)/(Glass, $13) </p>
+                   <p>Altitude Syrah, 2010 Marlborough (Bottle, $64)/(Glass, $15) </p>
+                   <p>Greystone Syrah, 2012, Wairarapa (Bottle, $73)/(Glass, $17) </p>
+                   <p>Pegasus Bay Merlot, 2013, Waipara (Bottle, $65)/(Glass, $14) </p>
+                   <p>Pegasus Bay Pinot Noir, 2013, Waipara (Bottle, $110)</p>
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="white wine listings" class="row"> <!-- This is the row for the white wine listings-->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/wine_portrait2_FINAL.jpg" alt="a picture of wine">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <p>Spade Oak Pinot Gris, 2011, Gisborne (Bottle, $40)/(Glass, $10)</p>
+                    <p>Maude Pinot Gris, 2017, Otago (Bottle, $49.50)/(Glass, $11)</p>
+                    <p>Charles Wiffen Chardonnay, 2013, Otago (Bottle, $48)/(Glass, $11)</p>
+                    <p>Amisfield, Riesling, 2016, Otago (Bottle, $53)/(Glass, $12)</p>
+                    <p>Lamont Riesling, 2010, Otago (Bottle, $57)/(Glass, $13)</p>
+                    <p>Elephant Hill Viognier, 2013, Hawkes Bay (Bottle, $55)/(Glass, $12)</p>
+                    <p>Folium Sauvignon Blanc, 2011, Marlborough (Bottle, $52)/(Glass, $11)</p>
+                    <p>Billecart-Salmon Brut Reserve, France (Bottle, $120) </p>
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="beer and cider listings" class="row"> <!-- This is the row for the beer and cider listings-->
+
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/beerAndCider_FINAL.jpg" alt="a picture of beer and cider">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>BEER AND CIDER</h3>
+
+                <P>Garage project range $11</P>
+                <p>Tuatara range $11</p>
+                <p>Panhead range $10</p>
+                <p>Coopers Ale $10</p>
+                <p>Heineken $11</p>
+                <p>Moa Cider $10</p>
+                <p>Crooked Cider $10</p>
+            </div>
+
+        </div>
+
+        <div role="main" aria-label="non-alcoholic drinks listings" class="row"> <!-- This is the row for the raw fish listing -->
+			<div class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+                <img src ="images_finalTINY/non-alcholicdrinks_FINAL.jpg" alt="non alcoholic drinks">
+            </div> <!--  end of left half/column code -->
+
+            <div class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+                <h3>NON-ALCOHOLIC</h3>
+
+                <p>Mineral water $4.00 </p>
+                <p>Soft drinks $4.00</p>
+                <p>Juice $4.00</p>
+                <p>Coffee $4.50</p>
+                <p>Tea $3.50</p>
+
+            </div>
+
+        </div>
+<footer> <!-- start of the footer code/bottom of the page code -->
+
+    <div class="row"> <!-- container for the columns inside the footer -->
+
+        <div class="footer_content"> <!-- container for the left side of the footer that contains the instagram icon and relevant text -->
+
+            <div class="footer_column"> <!-- instagram icon column within the left side container-->
+                <a href="https://www.instagram.com/queenscliffe_luxury/" target="_blank"> <img src="./images_finalTINY/instagramIcon.jpg" alt="Instagram icon">  </a>
+            <!-- the above is the link for the instagram page that opens up in a new tab (blank target) and the file path for the image-->
+            <!--the instagram icon link doesn't take the user to a Haukai instagram, instead an instagram I made for a previous assignment.--> 
+        </div> <!-- end of instagram icon column within the left side container-->
+
+            <div class="footer_column"> <!-- instagram text column within the left side container -->
+            <p>Follow us on Instagram!</p> <!--text-->
+            </div> <!-- end of instagram text column within the left side container -->
+            
+            <!-- having the columns inside a column allows the text to be displayed next to the icon rather than underneath-->
+            
+        </div> <!-- end of left side container of the footer-->
+
+        <div class="footer_content"> <!-- right side container of the footer -->
+	
+            <p>Support Indigenous businesses</p>
+            
+        </div> <!--end of right side container of the footer -->
+
+    </div> <!-- end of overall container 'row' that contains all columns in the footer-->
+
+</footer> <!-- end of footer code -->
+</body>
+</html>

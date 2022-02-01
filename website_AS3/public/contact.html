@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+        <title>Haukai Contact</title> <!-- This is the name of the tab for this code -->
+	
+		
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- hamburger menu-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+        <meta charset="utf-8">
+
+ <!-- CODE ASSUMPTIONS/notes: the html code validator gives errors for the dropdown section of my navigation/nav bar,
+this could be changed to not have a dropdown at all and have 6 equal links across the nav bar, to remove these 'errors'.
+but I have left the dropdown section in, because despite what the code validator says, I got the code for the dropdown part of the nav
+bar from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp (w3 schools, how to create a dropdown nav bar.)  
+the instagram icon link doesn't take the user to a Haukai instagram, instead an instagram I made for a previous assignment. -->
+
+    </head>
+ 
+    <!-- start of main content of page -->
+    <body> 
+		
+        <h1>Haukai Restaurant</h1>
+
+        <nav aria-label="Main Navigation" class="navbar" id="myTopnav">
+          <ul>
+          <li><a href='index.html'>Home</a></li> <!-- home button link for nav bar-->
+          <li><a href='reservations.html'>Reservations</a></li> <!-- reservations button link for nav bar-->
+          <div class="dropdown"> <!-- class for the dropdown menu button and symbol for 'menu' on the nav bar-->
+              <button class="dropbtn">Menu
+                <i class="fa fa-caret-down"></i> <!-- the arrow that points down to indicate a dropdown list of options-->
+              </button>
+              <div class="dropdown-content"> <!-- the class for the dropdown options -->
+                <li><a href='food.html'>Kai (food) Menu</a></li> <!-- kai menu option on dropdown -->
+                <li><a href='drink.html'>Inu (drink) Menu</a></li> <!-- inu menu option on dropdown-->
+              </div>
+            </div> 
+          <li><a href='contact.html'>Contact</a></li> <!-- contact button link for nav bar-->
+          <li><a href='staff.html'>Staff Roster</a></li> <!-- staff roster button link for nav bar-->
+          </ul>
+
+          <!-- this is a class of two links that only get displayed on a smaller screen size (eg mobile)-->
+          <a class='mobile-nav-links' href='food.html'> Kai Menu</a> <!-- kai menu option for mobile nav bar-->
+          <a class='mobile-nav-links' href='drink.html'>Inu Menu</a> <!-- inu menu option for mobile nav bar-->
+          <!-- this was done because it was easier to do than to format the dropdown list for a mobile version of the nav bar-->
+
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- this javascript code runs when the three lines are clicked on in the mobile version of the nav bar-->
+              <i class="fa fa-bars"></i> <!-- three lines for mobile nav bar-->
+            </a>
+      </nav>
+
+        <!-- start of javascript for displaying the mobile version of the nav bar-->
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <!-- end of javascript for displaying the mobile version of the nav bar-->
+
+        <div role="main" class="row"> <!-- This is the container for the two columns that split the main content area of the page in half-->
+			<div class="column"> <!-- first/left column/half of the page-->
+
+               <p> <b>Phone Number:</b>  09 401 4019 </p>
+
+               <p> <b>Email:</b>  haukai@gmail.com </p>
+                    
+               <p> <b>Instagram:</b>  @haukaiRestaurantNZ </p>
+
+               <p> <b>Facebook:</b> haukaiRestaurantNZ </p>
+
+               <p> <b>Physical Address:</b> 1 Island Street Kerikeri, Bay of Islands </p>
+               
+            </div> <!--  end of left half/column code -->
+
+            <div class="column"> <!-- second/right column/half of the page-->
+			
+				
+                <div style="overflow:hidden;resize:none;max-width:100%;width:700px;height:350px;"><div id="display-googlemap" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" src="https://www.google.com/maps/embed/v1/place?q=bay+of+islands+new+zealand&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-maphtml" rel="nofollow" href="https://sucks.hosting" id="grabmaps-authorization">check it</a><style>#display-googlemap img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+                
+                <!-- the html validator says that the 'style' element in the code above for the Google Maps isn't allowed, but it came directly from Google Map
+                s to be able to embed it.-->
+                <!-- the address in the Google map is a general one for area of Bay of Islands. This would
+                actually show the Haukai address for a real application-->
+                
+            </div>
+        </div>
+
+<footer> 
+
+    <div class="row"> <!-- container for the columns inside the footer -->
+
+        <div class="footer_content"> <!-- container for the left side of the footer that contains the instagram icon and relevant text -->
+
+            <div class="footer_column"> <!-- instagram icon column within the left side container-->
+                <a href="https://www.instagram.com/queenscliffe_luxury/" target="_blank"> <img src="./images_finalTINY/instagramIcon.jpg"  alt="Instagram icon">  </a>
+            <!-- the above is the link for the instagram page that opens up in a new tab (blank target) and the file path for the image-->
+            </div> <!-- end of instagram icon column within the left side container-->
+
+            <div class="footer_column"> <!-- instagram text column within the left side container -->
+            <p>Follow us on Instagram!</p> <!--text-->
+            </div> <!-- end of instagram text column within the left side container -->
+            
+            <!-- having the columns inside a column allows the text to be displayed next to the icon rather than underneath-->
+            
+        </div> <!-- end of left side container of the footer-->
+
+        <div class="footer_content"> <!-- right side container of the footer -->
+	
+            <p>Support Indigenous businesses</p>
+            
+        </div> <!--end of right side container of the footer -->
+
+    </div> <!-- end of overall container 'row' that contains all columns in the footer-->
+
+</footer> <!-- end of footer code -->
+</body>
+</html>

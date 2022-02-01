@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- CODE ASSUMPTIONS/notes: the html code validator gives errors for the dropdown section of my navigation/nav bar,
+this could be changed to not have a dropdown at all and have 6 equal links across the nav bar, to remove these 'errors'.
+but I have left the dropdown section in, because despite what the code validator says, I got the code for the dropdown part of the nav
+bar from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp (w3 schools, how to create a dropdown nav bar.)   -->
+    <head>
+        <title>Haukai Home</title> <!-- This is the name of the tab for this code -->
+	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- hamburger menu-->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+        <meta charset="utf-8">
+    </head>
+ 
+    <!-- start of main content of page -->
+    <body> 
+		
+        <h1>Haukai Restaurant</h1> <!-- Start of navigation bar-->
+
+        <nav aria-label="Main Navigation" class="navbar" id="myTopnav">
+          <ul>
+          <li><a href='index.html'>Home</a></li> <!-- home button link for nav bar-->
+          <li><a href='reservations.html'>Reservations</a></li> <!-- reservations button link for nav bar-->
+          <div class="dropdown"> <!-- class for the dropdown menu button and symbol for 'menu' on the nav bar-->
+              <button class="dropbtn">Menu
+                <i class="fa fa-caret-down"></i> <!-- the arrow that points down to indicate a dropdown list of options-->
+              </button>
+              <div class="dropdown-content"> <!-- the class for the dropdown options -->
+                <li><a href='food.html'>Kai (food) Menu</a></li> <!-- kai menu option on dropdown -->
+                <li><a href='drink.html'>Inu (drink) Menu</a></li> <!-- inu menu option on dropdown-->
+              </div>
+            </div> 
+          <li><a href='contact.html'>Contact</a></li> <!-- contact button link for nav bar-->
+          <li><a href='staff.html'>Staff Roster</a></li> <!-- staff roster button link for nav bar-->
+          </ul>
+
+          <!-- this is a class of two links that only get displayed on a smaller screen size (eg mobile)-->
+          <a class='mobile-nav-links' href='food.html'> Kai Menu</a> <!-- kai menu option for mobile nav bar-->
+          <a class='mobile-nav-links' href='drink.html'>Inu Menu</a> <!-- inu menu option for mobile nav bar-->
+          <!-- this was done because it was easier to do than to format the dropdown list for a mobile version of the nav bar-->
+
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- this javascript code runs when the three lines are clicked on in the mobile version of the nav bar-->
+              <i class="fa fa-bars"></i> <!-- three lines for mobile nav bar-->
+            </a>
+      </nav>
+
+        <!-- start of javascript for displaying the mobile version of the nav bar-->
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <!-- end of javascript for displaying the mobile version of the nav bar-->
+
+		  <div role="main" class="row"> <!-- This is the container for the two columns that split the main content area of the page in half-->
+			<div class="column"> <!-- first/left column/half of the page-->
+
+				<div class="slideshowContainer"> <!-- container for the slideshow images -->
+					<img class="slides" src="./images_finalTINY/slideshow1_FINAL.jpg" alt="a picture of Haukai Restaurant seating area"> <!-- 1st picture displayed in slideshow -->
+					<img class="slides" src="./images_finalTINY/slideshow2_FINAL.jpg" alt="a picture of Haukai Restaurant seating area"> <!-- 2nd picture displayed in slideshow-->
+					<img class="slides" src="./images_finalTINY/slideshow3_FINAL.jpg" alt="a picture of Haukai Restaurant dinnerware"> <!-- 3rd picture displayed -->
+		
+                    <!-- start of javascript that makes the slideshow work-->
+					<script> 
+					var slideIndex = 1;
+						showDivs(slideIndex);
+
+					function plusDivs(n) {
+						showDivs(slideIndex += n);
+					}
+
+					function showDivs(n) {
+						var i;
+						var x = document.getElementsByClassName("slides");
+						if (n > x.length) {slideIndex = 1}
+						if (n < 1) {slideIndex = x.length}
+						for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";  
+					}
+					x[slideIndex-1].style.display = "block";  
+					}
+					</script> <!-- end of javascript that makes the slideshow work-->
+				
+				</div> <!--  end of slideshow code -->
+
+                <button class="slideshowButton1" onclick="plusDivs(-1)">&#10094;</button> <!-- Left arrow/back arrow for slideshow -->
+				<button class="slideshowButton2" onclick="plusDivs(1)">&#10095;</button> <!--  Right arrow/next arrow for slideshow -->
+
+                <!-- the '&#10094;' and '&#10095;' are how the html recognises to display the arrows -->
+
+			</div> <!--  end of left half/column code -->
+
+			<div class="column"> <!-- second/right column/half of the page-->
+			
+				<div class="home_page_blurb"> <!-- paragraph for blurb opposite the slideshow-->
+
+					<p> Haukai Restaurant specialises in Māori kai and is based in the Bay of Islands. It was started by a
+                        couple who were keen on creating a business that would appeal to locals and tourists visiting the area. </p>
+                        
+                    <p>The restaurant is only open in the evenings at the moment, from Wednesday to Sunday inclusive.</p>
+
+                    <p>The dinner menu features Māori and Pākeha kai options and drinks.</p>
+
+                    <p> The owners also want customers to experience Te Ao Māori with the use of karakia for blessing food
+                        and other Māori culture elements. </p>
+                <!-- this blurb was taken from the assignment appendix. there would be better information here
+                for the actual application, this is just like a placeholder. -->
+                </div> <!-- end of paragraph blurb opposite the slideshow -->
+            </div>
+        </div>
+			
+    
+    <footer> 
+		  <div class="row"> <!-- container for the columns inside the footer -->
+	
+			  <div class="footer_content"> <!-- container for the left side of the footer that contains the instagram icon and relevant text -->
+	
+				  <div class="footer_column"> <!-- instagram icon column within the left side container-->
+					  <a href="https://www.instagram.com/queenscliffe_luxury/" target="_blank"> <img src="./images_finalTINY/instagramIcon.jpg" alt="Instagram icon">  </a>
+           <!--the instagram icon link doesn't take the user to a Haukai instagram, instead an instagram I made for a previous assignment.--> 
+				  <!-- the above is the link for the instagram page that opens up in a new tab (blank target) and the file path for the image-->
+				  </div> <!-- end of instagram icon column within the left side container-->
+	
+				<div class="footer_column"> <!-- instagram text column within the left side container -->
+				  <p>Follow us on Instagram!</p> <!--text-->
+				</div> <!-- end of instagram text column within the left side container -->
+				
+				<!-- having the columns inside a column allows the text to be displayed next to the icon rather than underneath-->
+				
+			</div> <!-- end of left side container of the footer-->
+	
+			  <div class="footer_content"> <!-- right side container of the footer -->
+	
+				  <p>Support Indigenous businesses</p>
+				
+			  </div> <!--end of right side container of the footer -->
+	
+		  </div> <!-- end of overall container 'row' that contains all columns in the footer-->
+	
+	  </footer> <!-- end of footer code -->
+  </body> 	
+</html>

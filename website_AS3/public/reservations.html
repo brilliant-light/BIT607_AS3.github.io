@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <head>
+      <meta charset="utf-8">
+        <title>Haukai Reservations</title> <!-- This is the name of the tab for this code -->
+	
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- hamburger menu--> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"> <!-- provides the styling for the datepicker -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script> <!-- provides the functionality of the datepicker -->
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script> <!-- also provides the functionality of the datepicker -->
+
+         <!-- CODE ASSUMPTIONS/notes: the html code validator gives errors for the dropdown section of my navigation/nav bar,
+this could be changed to not have a dropdown at all and have 6 equal links across the nav bar, to remove these 'errors'.
+but I have left the dropdown section in, because despite what the code validator says, I got the code for the dropdown part of the nav
+bar from https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp (w3 schools, how to create a dropdown nav bar.)   -->
+        
+
+<!-- this javascript section is for the datepicker -->
+        <script> 
+            $( function() {
+              var dateFormat = "mm/dd/yy",
+                checkInDate = $( "#checkInDate" )
+                  .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 3
+                  })
+                  .on( "change", function() {
+                    checkOutDate.datepicker( "option", "minDate", getDate( this ) );
+                  }),
+                checkOutDate = $( "#checkOutDate" ).datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  numberOfMonths: 3
+                })
+                .on( "change", function() {
+                  checkInDate.datepicker( "option", "maxDate", getDate( this ) );
+                });
+           
+              function getDate( element ) {
+                var date;
+                try {
+                  date = $.datepicker.parseDate( dateFormat, element.value );
+                } catch( error ) {
+                  date = null;
+                }
+           
+                return date;
+              }
+            } );
+            </script>
+
+    </head>
+ 
+    <!-- start of main content of page -->
+    <body> 
+
+		<h1>Reservations</h1>
+
+		<nav aria-label="Main Navigation" class="navbar" id="myTopnav">
+      <ul>
+      <li><a href='index.html'>Home</a></li> <!-- home button link for nav bar-->
+      <li><a href='reservations.html'>Reservations</a></li> <!-- reservations button link for nav bar-->
+      <div class="dropdown"> <!-- class for the dropdown menu button and symbol for 'menu' on the nav bar-->
+          <button class="dropbtn">Menu
+            <i class="fa fa-caret-down"></i> <!-- the arrow that points down to indicate a dropdown list of options-->
+          </button>
+          <div class="dropdown-content"> <!-- the class for the dropdown options -->
+            <li><a href='food.html'>Kai (food) Menu</a></li> <!-- kai menu option on dropdown -->
+            <li><a href='drink.html'>Inu (drink) Menu</a></li> <!-- inu menu option on dropdown-->
+          </div>
+        </div> 
+      <li><a href='contact.html'>Contact</a></li> <!-- contact button link for nav bar-->
+      <li><a href='staff.html'>Staff Roster</a></li> <!-- staff roster button link for nav bar-->
+      </ul>
+
+      <!-- this is a class of two links that only get displayed on a smaller screen size (eg mobile)-->
+      <a class='mobile-nav-links' href='food.html'> Kai Menu</a> <!-- kai menu option for mobile nav bar-->
+      <a class='mobile-nav-links' href='drink.html'>Inu Menu</a> <!-- inu menu option for mobile nav bar-->
+      <!-- this was done because it was easier to do than to format the dropdown list for a mobile version of the nav bar-->
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <!-- this javascript code runs when the three lines are clicked on in the mobile version of the nav bar-->
+          <i class="fa fa-bars"></i> <!-- three lines for mobile nav bar-->
+        </a>
+  </nav>
+
+        <!-- start of javascript for displaying the mobile version of the nav bar-->
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <!-- end of javascript for displaying the mobile version of the nav bar-->
+
+<div class="row"> <!-- This is the row for the rewena bread listing -->
+
+    <h2>Reservation Instructions</h2>
+
+    <div role="main" aria-label="reservation instructionssa" class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+        <p>1. Enter your name.
+        <p>2. Enter how many people are attending the reservation.</p>
+        <p>3. Enter your phone number.</p> 
+        <p>4. Optionally, enter your email address.</p>    
+        <p>5. Select a date on the calendar on the right for the reservation date.</p>
+        <p>6. Click the 'Check Availability' button. </p>
+        <p>7. Once all details are filled out and the reservation date is available,
+            please click the 'Submit' button.</p>
+    </div> <!--  end of left half/column code -->
+
+    <div role="main" aria-label="availability check for reservation" class="column_Menu_Listing"> <!-- start of the right hand half of the page-->
+
+        <p>Select the textbox below and a calendar will appear which will allow you to select the date for the reservation.</p>
+        <form>
+            <label for="checkInDate">Reservation date:</label> <!-- check in date label and input section -->
+            <input type="text" maxlength="10" placeholder="yyyy-mm-dd" id="checkInDate" name="checkInDate" required><br><br>
+        </form>
+
+        <button type="button" id="button_search">Check Availability</button>
+
+    </div>
+
+</div>
+
+<div role="main" aria-label="Google form for reservation booking and privacy statement section" class="row"> <!-- This is the row for the Google form and privacy statement-->
+
+    <div role="form" class="column_Menu_Listing"> <!-- first/left column/half of the page-->
+        <iframe class="google_form_reservation" src="https://docs.google.com/forms/d/e/1FAIpQLSdYFs56rxBK5DGwTF0iTkmxW6ffo-E5_USh7bfzLMRpue-p5g/viewform?embedded=true" width="640" height="844"></iframe>
+    </div> <!--  end of left half/column code -->
+
+    <div class="column_Menu_Listing">
+        <h4>Privacy Statement:</h4>
+
+        <p>We collect personal information from you, including information about your: </p>
+            <p>-name</p>
+            <p>-contact information</p>
+            <p>We collect your personal information in order to complete reservations.</p>
+            <p>Providing some information is optional. If you choose not to enter their name or contact information, we'll be unable to complete a reservation.
+                If you choose not to enter an email address, we are still able to complete a reservation.</p>
+            <p>We keep your information safe by storing it in encrypted files based on the reservation form submission and only allowing certain staff to access it when necessary.</p>
+            
+            <p>You have the right to ask for a copy of any personal information we hold about you, and to ask for it to be corrected if you think it is wrong. If you’d like to ask for a copy of your information, or to have it corrected, please contact us at , or 09 401 4019, or 1 Island Street, Kerikeri, Bay of Islands.</p>
+    </div>
+
+
+</div>
+
+<footer> <!-- start of the footer code/bottom of the page code -->
+	
+    <div class="row"> <!-- container for the columns inside the footer -->
+
+        <div class="footer_content"> <!-- container for the left side of the footer that contains the instagram icon and relevant text -->
+
+            <div class="footer_column"> <!-- instagram icon column within the left side container-->
+                <a href="https://www.instagram.com/queenscliffe_luxury/" target="_blank"> <img src="./images_finalTINY/instagramIcon.jpg" alt="Instagram icon">  </a>
+            <!-- the above is the link for the instagram page that opens up in a new tab (blank target) and the file path for the image-->
+            <!--the instagram icon link doesn't take the user to a Haukai instagram, instead an instagram I made for a previous assignment.--> 
+          </div> <!-- end of instagram icon column within the left side container-->
+
+            <div class="footer_column"> <!-- instagram text column within the left side container -->
+            <p>Follow us on Instagram!</p> <!--text-->
+            </div> <!-- end of instagram text column within the left side container -->
+            
+            <!-- having the columns inside a column allows the text to be displayed next to the icon rather than underneath-->
+            
+        </div> <!-- end of left side container of the footer-->
+
+        <div class="footer_content"> <!-- right side container of the footer -->
+
+            <p>Support Indigenous businesses</p>
+            
+        </div> <!--end of right side container of the footer -->
+
+    </div> <!-- end of overall container 'row' that contains all columns in the footer-->
+
+</footer> <!-- end of footer code -->
+
+</html>
